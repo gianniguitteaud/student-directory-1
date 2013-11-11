@@ -1,4 +1,3 @@
-student_count = 7
 # let's put all the students into an array
 students = [
 	"Chris"
