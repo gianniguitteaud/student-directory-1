@@ -1,21 +1,22 @@
 # let's put all the students into an array
 students = [
-	"Chris"
-	"Erika"
-	"Hannah"
-	"Simon"
-	"Ken"
-	"Asta"
-	"G"
+	{:name => "Chris", :cohort => :november},
+	{:name => "Erica", :cohort =>  :november},
+	{:name => "Hannah", :cohort =>  :november},
+	{:name => "Simon", :cohort =>  :november},
+	{:name => "Ken", :cohort =>  :november},
+	{:name => "Nicki", :cohort =>  :november},
+	{:name => "Asta", :cohort =>  :november},
+	{:name => "G", :cohort =>  :november}
 ]
 def print_header
 	puts "the students of my cohort at makers academy"
 	puts "--------------"
 end
 
-def print(names)
-	names.each do |name|
-		puts name
+def print(students)
+	students.each do |student|
+		puts "#{student[:name]} (#{student[:cohort]} cohort)"
 	end
 end
 
