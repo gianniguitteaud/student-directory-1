@@ -8,3 +8,6 @@ puts "Ken"
 puts "Asta"
 puts "G"
 
+print "Overall, we have "
+print 7
+puts " great students"
