@@ -18,7 +18,7 @@ end
 
 def print(students) 
 	students.each do |student|
-        if student[:name].length >= 8
+        if student[:name].length >= ruby 8
 		puts "#{student[:name]} (#{student[:cohort]} cohort)"
   end
 	end
