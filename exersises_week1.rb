@@ -12,28 +12,32 @@ students = [
   {:name => "Kumi", :cohort =>  :november}
 ]
 def print_header
-  puts "the students of my cohort at makers academy"
-  puts "--------------"
+  print "the students of my cohort at makers academy\n"
+  print "--------------\n"
 end
 
-def print(students) 
-  students.each do |student|
-    puts "#{student[:name]} (#{student[:cohort]} cohort)"
+def display(students) 
+  students.each_with_index do |student, index|
+    print "#{index + 1}. #{student[:name]} (#{student[:cohort]} cohort)\n"
   end
 end
 
 def print_footer(names) 
-  puts "overall we have #{names.length} great students"
+  if names.length == 1
+    print "overall we have #{names.length} great student\n"
+  else
+    print "overall we have #{names.length} great students\n"
+  end
 end
 
 def input_students
-  puts "please enter the names of the students"
-  puts "to finish hit return twice"
+  print "please enter the names of the students\n"
+  print "to finish hit return twice\n"
 students=[]
-name =gets.chomp.split(' ').map {|word| word.capitalize }.join(' ')
+name = gets.chomp.split(' ').map {|word| word.capitalize }.join(' ')
 while !name.empty? do
   students << {:name => name, :cohort => :november}
-  puts "now we have #{students.length} students"
+  print "now we have #{students.length} students\n"
   name = gets.chomp.split(' ').map {|word| word.capitalize }.join(' ')
 end
   students
@@ -41,5 +45,5 @@ end
 #nothing happens until we call methods
 students = input_students
 print_header
-print (students)
-print_footer (students)
+display(students)
+print_footer(students)
