@@ -21,12 +21,13 @@ def input_students
   puts "to finish hit return twice"
 students=[]
 name = gets.chomp.split(' ').map {|word| word.capitalize }.join(' ')
-while !name.empty? do
+while !name.empty? &&  students.length <= 4 do
   students << {:name => name, :cohort => :november}
   if students.length <= 4
-  puts "now we have #{students.length} students"
-else puts "sorry we are full"
-end  
+    puts "now we have #{students.length} students"
+  else
+    puts "sorry we are full"
+  end  
   name = gets.chomp.split(' ').map {|word| word.capitalize }.join(' ')
 end
   students
