@@ -16,9 +16,9 @@ def print_header
 	puts "--------------"
 end
 
-def print(students) 
+def print(students)
 	students.each do |student|
-		puts "#{student[:name]} (#{student[:cohort]} cohort)"
+		puts "#{student[:name]} (#{student[:cohort]} cohort)".center(80)
 	end
 end
 
@@ -27,12 +27,13 @@ def print_footer(names)
 end
 
 def input_students
-  puts "please enter the names of the students"
-  puts "to finish hit return twice"
-students=[]
-name =gets.chomp.split(' ').map {|word| word.capitalize }.join(' ')
+  puts "please enter the names of the students and there cohort"
+  puts "hit return. To finish hit return twice"
+  students=[]
+  name = gets.chomp.split(' ').map {|word| word.capitalize }.join(' ')
+  cohort = gets.chomp.split(' ').map {|word| word.capitalize }.join(' ')
 while !name.empty? do
-  students << {:name => name, :cohort => :november}
+  students << {:name => name, :cohort => :cohort}
   puts "now we have #{students.length} students"
   name = gets.chomp.split(' ').map {|word| word.capitalize }.join(' ')
 end
