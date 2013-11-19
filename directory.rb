@@ -15,18 +15,32 @@ def print_footer(names)
 	puts "overall we have #{names.length} great students"
 end
 
-def input_students
-  puts "please enter the names of the students and there cohort"
-  puts "hit return. To finish hit return twice"
-  students=[]
-  name = gets.chomp.split(' ').map {|word| word.capitalize }.join(' ')
-  cohort = gets.chomp.split(' ').map {|word| word.capitalize }.join(' ')
-while !name.empty? do
-  students << {:name => name, :cohort => cohort}
-  puts "now we have #{students.length} students"
-  name = gets.chomp.split(' ').map {|word| word.capitalize }.join(' ')
-  cohort = gets.chomp.split(' ').map {|word| word.capitalize }.join(' ')
+def capitalize_all_words(string)
+  string.split(' ').map {|word| word.capitalize }.join(' ')  
 end
+
+def capitalized_input
+  capitalize_all_words(gets.chomp)
+end
+
+def print_input_students_message
+  puts "please enter the names of the students and there cohort"
+  puts "hit return. To finish hit return twice"  
+end
+
+def add_student_to_list(students, name, cohort)
+    students << {:name => name, :cohort => cohort}
+    puts "now we have #{students.length} students"
+end
+
+def input_students
+  print_input_students_message
+  students = []
+  loop do
+    name, cohort = capitalized_input, capitalized_input    
+    break if name.empty?
+    add_student_to_list(students, name, cohort)
+  end
   students
 end
 #nothing happens until we call methods
